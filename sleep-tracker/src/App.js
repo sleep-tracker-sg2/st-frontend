@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route} from 'react-router-dom';
+import RegisterUser from './components/registerUser.js';
+import Login from './components/login.js';
+import Main from './components/dashboard/main.js';
+//import UserRoute from './components/dashboard/userRoute.js';
+//import SleepActions from './components/dashboard/sleepActions.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App=()=> {
+  return ( 
+    <div>
+      <Main/>
+      <Route exact path='/' render={props => <Login{...props}/>} />
+      <Route path='/create' render={props => <RegisterUser{...props}/>} />
+      <UserRoute path='/dashboard' component={Main} />
+     
+   </div>
+
+   );
+}; 
 
 export default App;
