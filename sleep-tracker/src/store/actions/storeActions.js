@@ -1,1 +1,22 @@
-// export actions 
+export const REGISTRATION_PENDING = "REGISTRATION_PENDING";
+export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
+export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
+
+export const LOGON_PENDING = "LOGON_PENDING";
+export const LOGON_SUCCESS = "LOGON_SUCCESS";
+export const LOGON_FAILURE = "LOGON_FAILURE";
+
+export const SET_USER = "SET_USER";
+export const GET_ERRORS = "GET_ERRORS";
+
+export const GET_DAILY = "GET_DAILY";
+export const GET_DAILY_SUCCESS = "GET_DAILY_SUCCESS";
+export const GET_DAILY_FAILURE = "GET_DAILY_FAILURE";
+
+export const GET_WEEKLY = "GET_WEEKLY";
+export const GET_MONTHLY = "GET_MONTHLY";
+export const GET_YEARLY = "GET_YEARLY";
+export const GET_ALL_YEAR = "GET_ALLYEAR";
+export const UPDATE_SLEEP = "UPDATE_SLEEP";
+export const DELETE_SLEEP = "DELETE_SLEEP";
+export const POST_SLEEP = "POST_SLEEP";
