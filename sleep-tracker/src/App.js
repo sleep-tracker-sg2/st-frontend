@@ -9,10 +9,9 @@ import Main from './components/dashboard/main.js';
 const App=()=> {
   return ( 
     <div>
-      <Main/>
       <Route exact path='/' render={props => <Login{...props}/>} />
-      <Route path='/create' render={props => <RegisterUser{...props}/>} />
-      <UserRoute path='/dashboard' component={Main} />
+      <Route path='/register' render={props => <RegisterUser{...props}/>} />
+      <Route path='/dashboard' component={Main} />
      
    </div>
 
