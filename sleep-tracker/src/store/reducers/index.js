@@ -37,7 +37,7 @@ const initialState = {
     loggedIn: false,
     loggingIn: false,
     signingUp: false,
-    authError: '',
+    authStatus: '',
     stats: [],
     fetchingStat: false,
     addingStat: false,
@@ -52,11 +52,14 @@ export default function reducer(state = initialState, action) {
         case SIGNUP_START:
             return {
                 ...state,
+                authMessage: '',
+                authStatus: action.type,
                 signingUp: true
             }
         case SIGNUP_SUCCESS:
             return {
                 ...state,
+                authStatus: action.type,
                 signingUp: false,
                 authMessage: `${action.payload.first_name}, you successfully register`
             }
@@ -65,7 +68,7 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 signingUp: false,
                 authMessage: action.payload,
-                authError: action.type
+                authStatus: action.type
             }
         case LOGIN_START:
             return {

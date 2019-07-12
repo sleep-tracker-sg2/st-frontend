@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { login } from '../store/actions/authorizations'
+import { Form, Card, Container } from 'reactstrap'
 
 class Login extends Component {
 
@@ -25,15 +26,14 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.login(this.state.creds)
-        alert(this.state.creds)
         // I'm guessing on this endpoint
-        // this.props.history.push('/dashboard')
+        this.props.history.push('/dashboard')
     }
 
     render() {
         return (
-            <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
+            <Container>
+                <Form onSubmit={this.handleSubmit}>
                     <div>
                         <label>Username</label>
                         <input type="text"
@@ -53,8 +53,8 @@ class Login extends Component {
                         />
                     </div>
                     <button>Submit</button>
-                </form>
-            </React.Fragment>
+                </Form>
+            </Container>
         )
     }
 }

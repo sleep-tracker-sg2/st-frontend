@@ -2,8 +2,7 @@
 import axios from 'axios'
 
 //link to heroku deployment
-const link = 'http://localhost:5500/sleep-stats'
-
+const link = 'https://sleep-track1.herokuapp.com/sleep-stats'
 
 //grab data 
 export const FETCH_STATS_START = 'FETCH_STATS_START'
