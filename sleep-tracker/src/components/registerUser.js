@@ -1,5 +1,6 @@
 //register user with first/last name. username, password, emailimport React, {Component} from 'react';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import { register } from '../store/actions/authorizations'
 import { connect } from 'react-redux'
 import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap'
@@ -90,8 +91,10 @@ class RegisterUser extends Component {
                         />
                     </FormGroup>
                     <Button type="submit">Sign Up</Button>
+                    <FormGroup>
+                        <Link to="/">Already have an account, Log in</Link>
+                    </FormGroup>
                 </Form>
-
             </Container>
         )
     }

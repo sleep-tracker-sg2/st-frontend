@@ -1,6 +1,7 @@
 //user login
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { login } from '../store/actions/authorizations'
 import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap'
 
@@ -57,6 +58,9 @@ class Login extends Component {
                         />
                     </FormGroup>
                     <Button onSubmit={this.handleSubmit}>Login</Button>
+                    <FormGroup>
+                        <Link to='/register'>Don't have an account, Sign up</Link>
+                    </FormGroup>
                 </Form>
             </Container>
         )
