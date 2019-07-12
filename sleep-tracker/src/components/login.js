@@ -23,7 +23,7 @@ class Login extends Component {
         })
     }
 
-    handleSubmit =  e => {
+    handleSubmit = e => {
         e.preventDefault()
 
         this.props.login(this.state.creds)
