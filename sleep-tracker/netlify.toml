@@ -1,4 +1,4 @@
 [build]
 base='sleep-tracker/'
 publish='sleep-tracker/build/'
-command='npm build'
+command='npm run-script build'
