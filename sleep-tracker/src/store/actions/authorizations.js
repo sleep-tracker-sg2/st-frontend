@@ -3,7 +3,7 @@ import axios from 'axios'
 // import jwt from 'jwt-decode'
 
 // link to heroku backend deployment here
-const link = 'http://localhost:5500'
+const link = 'https://sleep-track1.herokuapp.com'
 
 //register user
 
@@ -29,7 +29,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const login = creds => dispatch => {
     dispatch({ type: LOGIN_START})
-    axios.post(`http://localhost:5500/login`, creds)
+    axios.post(`${link}/login`, creds)
         .then(res => {
             localStorage.setItem('token', res.data.token)
             dispatch({ type: LOGIN_SUCCESS, payload: res.data.message})

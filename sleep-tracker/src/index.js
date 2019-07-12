@@ -6,9 +6,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import rootReducer from './store/reducers/index'
 
-import './index.css';
+import './styles/index.sass';
 import App from './App';
 
 

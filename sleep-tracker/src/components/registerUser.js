@@ -26,10 +26,12 @@ class RegisterUser extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state.newUser)
         this.props.register(this.state.newUser)
-        if(this.props.authError == 'SIGNUP_FAIL') {
+        if(this.props.authStatus == 'SIGNUP_FAIL') {
             alert(this.props.authMessage)
-        } else {
+        } 
+        if(this.props.authStatus == 'SIGNUP_SUCCESS'){
             alert(`${this.state.newUser.first_name}, you were successfully register`)
             this.props.history.push('/')
         }
@@ -91,9 +93,9 @@ class RegisterUser extends Component {
             }
         }
         
-const mapStateToProps = ({signingUp, authError, authMessage}) => ({
+const mapStateToProps = ({signingUp, authStatus, authMessage}) => ({
     signingUp,
-    authError,
+    authStatus,
     authMessage
 })
 
