@@ -1,10 +1,21 @@
 //import sleepActions, daily, weekly etc stats here
 import React, { Component } from 'react';
 import { Container, Row, Col, Jumbotron, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
+
+
+import DailyStat from './dailyStats'
+import WeeklyStat from './weeklyStats';
+import MonthlyStat from './monthlyStats';
+import YearlyStat from './yearlyStats';
+// import {Pie} from 'react-chartjs-2';
+
+
 import { connect } from 'react-redux'
 import { getStats } from '../../store/actions/profile'
 
+
 class Main extends Component {
+
 
     // componentDidMount() {
     //     const jwtDecode =  require('jwt-decode')
@@ -17,37 +28,69 @@ class Main extends Component {
 
     // }
 
+
     render() {
+
+        const data = {
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+                ]}]
+        }
+
         return (
+        <div>
             <Container>
                 <Row>
                     <Col>
-                        <Jumbotron>
-                            <h1>Hello, user</h1>
-                            <p>Welcome to Sleep Tracker hope you can get better than me</p>
+                        <Jumbotron className="jumboTron">
+                            <h1>Hi, Kelly!</h1>
+                            <h2>Welcome to SleepTracker</h2>
+                            <hr/>
+                            <p>Use this dashboard to track and monitor your sleep schedule.
+                                We have conveniently provided quick links to a variety
+                                of sleep tracking information, as well as easy access to 
+                                tools to input your daily activity.
+                            </p>
                         </Jumbotron>
                     </Col>
                 </Row>
 
+
                 <Row>
                     <Col>
-                        <Card className='monthlyStat'>
-                            <CardBody>
-                                <CardTitle>Monthly Stats</CardTitle>
-                                <CardText>Base on your current month you will need an average number of hours of sleep to be in a better mood</CardText>
-                            </CardBody>
-                        </Card>
+                      <Button>Add Sleep</Button>
                     </Col>
                     <Col>
-                        <Card className='buttons'>
-                            <Button color='secondary' block>Add New Sleep stats</Button>
-                            <Button color='secondary' block>Show All Stats</Button>
-                        </Card>
+                       <Button>Show All Stats</Button>
                     </Col>
                 </Row>
 
-
+                <Row>
+                    <Col>
+                        <DailyStat sum={9} difference={5}/>
+                    </Col>
+                    <Col>
+                        <WeeklyStat sum={9} difference={3} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <MonthlyStat sum={9} difference={5}/>
+                    </Col>
+                    <Col>
+                        <YearlyStat sum={9} difference={5}/>
+                    </Col>
+               </Row>
             </Container>
+         </div>
         )
     }
 }

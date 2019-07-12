@@ -6,10 +6,10 @@ import { blue, yellow } from "@material-ui/core/colors";
 class Daily extends Component{
     state={
         chartInfo:{
-            tags: ['Sleep Time', 'Awake Time'],
+            labels: ['Sleep Time', 'Awake Time'],
 
             datasets: [
-                {
+                {   
                     data: [this.props.sum, this.props.difference],
                     backgroundColor: [yellow[100], blue[200]]
                 }
@@ -20,11 +20,12 @@ class Daily extends Component{
         const {width, data} =this.props;
         
         return (
-            <Pie>
-                data={this.state.chartInfo}
-                height={500}
+            <React.Fragment>
+            <Pie 
+                 data={this.state.chartInfo}
+                height={400}
                 options={{
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     responsive: true,
                     title: {
                         display: true,
@@ -32,10 +33,11 @@ class Daily extends Component{
                         fontSize: width === 'xs' ?12:18,
                         fontColor: '#E6E6E6'
                     }
-                }}
-
-            </Pie>
+                }} 
+            />
+        
+            </React.Fragment>
         );
       }
    }    
-export default withWidth()(DailyChart);
+export default withWidth()(Daily);

@@ -30,10 +30,10 @@ class RegisterUser extends Component {
         e.preventDefault();
         console.log(this.state.newUser)
         this.props.register(this.state.newUser)
-        if(this.props.authStatus == 'SIGNUP_FAIL') {
+        if (this.props.authStatus == 'SIGNUP_FAIL') {
             alert(this.props.authMessage)
-        } 
-        if(this.props.authStatus == 'SIGNUP_SUCCESS'){
+        }
+        if (this.props.authStatus == 'SIGNUP_SUCCESS') {
             alert(`${this.state.newUser.first_name}, you were successfully register`)
             this.props.history.push('/')
         }
@@ -81,26 +81,26 @@ class RegisterUser extends Component {
                         />
                     </FormGroup>
                     <FormGroup>
-                            <Label>Email</Label>
-                            <Input id="email"
-                                type="email"
-                                placeholder="email"
-                                value={this.state.newUser.email}
-                                onChange={this.handleChange}
-                            />
-                        </FormGroup>
-                        <Button type="submit">Sign Up</Button>
+                        <Label>Email</Label>
+                        <Input id="email"
+                            type="email"
+                            placeholder="email"
+                            value={this.state.newUser.email}
+                            onChange={this.handleChange}
+                        />
+                    </FormGroup>
+                    <Button type="submit">Sign Up</Button>
                 </Form>
 
-           </Container>
-                )
-            }
-        }
-        
-const mapStateToProps = ({signingUp, authStatus, authMessage}) => ({
+            </Container>
+        )
+    }
+}
+
+const mapStateToProps = ({ signingUp, authStatus, authMessage }) => ({
     signingUp,
     authStatus,
     authMessage
 })
 
-export default connect(mapStateToProps, {register} )(RegisterUser);
+export default connect(mapStateToProps, { register })(RegisterUser);
