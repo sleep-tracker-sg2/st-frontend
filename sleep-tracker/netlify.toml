@@ -1,4 +1,4 @@
 [build]
 base='/documents/sleep-tracker/'
-publish='/documents/sleep-tracker/build/'
+publish='/documents/sleep-tracker/build'
 command='yarn build'
