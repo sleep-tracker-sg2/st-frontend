@@ -1,6 +1,6 @@
 
 
-import axios from "axios";
+/*import axios from "axios";
 import { GET_ERRORS, SET_USER } from "./storeActions";
 import authToken from "../../views/authToken";
 import jwt_decode from "jwt-decode";
@@ -61,4 +61,4 @@ export const userLogout = () => dispatch => {
   authToken(false);
   dispatch(setUser({}));
   window.location.href = "/";
-};
+}; */

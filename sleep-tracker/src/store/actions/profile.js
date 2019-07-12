@@ -1,4 +1,4 @@
-import axios from "axios";
+/*import axios from "axios";
 
 import {
   GET_DAILY,
@@ -153,5 +153,5 @@ export const updateSleep = data => dispatch => {
         payload: err.response.data
       })
     );
-};
+};  */
 
