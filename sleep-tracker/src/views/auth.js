@@ -7,6 +7,6 @@ export const authAxios = () => {
       "Content-Type": "application/json",
       Authorization: token
     },
-    baseURL: "https://sleep-tracker-app.herokuapp.com/" 
+    baseURL: 'https://sleep-track1.herokuapp.com'
   });
 };
