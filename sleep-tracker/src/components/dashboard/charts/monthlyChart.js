@@ -21,8 +21,9 @@ class MonthlyChart extends Component {
       labels: this.props.days,
       datasets: [
         {
-          label: "Hours Slept",
-          data: this.props.hours,
+          labels: "Hours Slept",
+          data: [8,3,5,6,8,3,2,4,8,6,5],
+          // data: this.props.hours,
           backgroundColor: "rgba(33, 150, 243, 0.25)",
           borderColor: blue[500],
           lineTension: 0.2
@@ -36,10 +37,10 @@ class MonthlyChart extends Component {
     console.log(data);
     return (
       <Line
-        data={this.state.chartData}
+        data={this.state.chartInfo}
         height={400}
         options={{
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           title: {
             display: true,
             text: "Hours Slept This Month",
