@@ -10,8 +10,9 @@ class WeeklyChart extends Component {
       labels: this.props.days,
       datasets: [
         {
-          label: "Hours Slept",
-          data: this.props.hours,
+          labels: "Hours Slept",
+          // data: this.props.hours,
+          data: [3,5,1,6,7,4],
           backgroundColor: "rgba(56, 142, 60, 0.1)",
           borderColor: green[600],
           lineTension: 0.2
@@ -27,7 +28,7 @@ class WeeklyChart extends Component {
         data={this.state.chartInfo}
         height={400}
         options={{
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           title: {
             display: true,
             text: "Hours Slept This Week",
