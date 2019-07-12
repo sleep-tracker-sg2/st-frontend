@@ -6,7 +6,7 @@ const userRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={() => {
-        if (localStorage.getItem("jwtToken")) {
+        if (localStorage.getItem("token")) {
           return <Component />;
         } else {
           return <Redirect to="/" />;

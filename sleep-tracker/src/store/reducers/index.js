@@ -43,7 +43,11 @@ const initialState = {
     addingStat: false,
     updatingStat: false,
     deletingStat: false,
-    error: ''
+    error: '',
+    user: {
+        username: '',
+        id: ''
+    }
 }
 
 //export default function
@@ -81,7 +85,7 @@ export default function reducer(state = initialState, action) {
                 loggingIn: false,
                 loggedIn: true,
                 authMessage: action.payload,
-                token: localStorage.getItem('token')
+                token: localStorage.getItem('token'),
             }
         case LOGIN_FAILURE:
             return {

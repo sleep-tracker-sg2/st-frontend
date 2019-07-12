@@ -1,18 +1,23 @@
 //import sleepActions, daily, weekly etc stats here
 import React, { Component } from 'react';
 import { Container, Row, Col, Jumbotron, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
-
 import { connect } from 'react-redux'
 import { getStats } from '../../store/actions/profile'
 
 class Main extends Component {
-  
-    componentDidMount() {
-        // this.props.getStats(userId)
-    }
+
+    // componentDidMount() {
+    //     const jwtDecode =  require('jwt-decode')
+    //     // this.props.getStats(userId)
+    //     const token = localStorage.getItem('token')
+    //     const decode = jwtDecode(token)
+    //     this.props.user.username = decode.username
+    //     this.props.user.id = decode.subject
+    //     console.log(this.props.user)
+
+    // }
 
     render() {
-
         return (
             <Container>
                 <Row>
@@ -47,9 +52,10 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = ({ loggedIn, stats}) => ({
+const mapStateToProps = ({ loggedIn, stats, user}) => ({
     stats,
-    loggedIn
+    loggedIn,
+    user
 })
 
 export default connect(mapStateToProps, {getStats})(Main)

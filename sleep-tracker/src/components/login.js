@@ -1,10 +1,8 @@
-
-
 //user login
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { login } from '../store/actions/authorizations'
-import { Form, Card, Container } from 'reactstrap'
+import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap'
 
 class Login extends Component {
 
@@ -25,36 +23,40 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit =  e => {
         e.preventDefault()
+
         this.props.login(this.state.creds)
-        // I'm guessing on this endpoint
-        this.props.history.push('/dashboard')
+        setTimeout(() => {
+            this.props.history.push('/dashboard')
+        }, 2000)
     }
 
     render() {
         return (
-            <Container>
-                <Form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>Username</label>
-                        <input type="text"
+            <Container className='loginForm'>
+                <h1>Sleep Tracker</h1>
+                <Form onSubmit={this.handleSubmit} >
+                    <h2>Login</h2>
+                    <FormGroup>
+                        <Label>Username</Label>
+                        <Input type="text"
                             id="username"
                             placeholder="username"
                             onChange={this.handleChange}
                             value={this.state.creds.username}
                         />
-                    </div>
-                    <div>
-                        <label>Password</label>
-                        <input type="password"
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Password</Label>
+                        <Input type="password"
                             id="password"
                             placeholder="password"
                             onChange={this.handleChange}
                             value={this.state.creds.password}
                         />
-                    </div>
-                    <button>Submit</button>
+                    </FormGroup>
+                    <Button onSubmit={this.handleSubmit}>Login</Button>
                 </Form>
             </Container>
         )

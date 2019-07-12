@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { register } from '../store/actions/authorizations'
 import { connect } from 'react-redux'
+import { Form, FormGroup, Label, Input, Button, Container } from 'reactstrap'
+
 
 class RegisterUser extends Component {
 
@@ -38,57 +40,59 @@ class RegisterUser extends Component {
     }
     render() {
         return (
-            <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>First Name</label>
-                        <input id="first_name"
+            <Container className='registerForm'>
+                <h1>Sleep Track</h1>
+                <Form onSubmit={this.handleSubmit}>
+                    <h2>Sign Up</h2>
+                    <FormGroup>
+                        <Label>First Name</Label>
+                        <Input id="first_name"
                             type="text"
                             placeholder="first name"
                             value={this.state.newUser.first_name}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
-                        <label>Last Name</label>
-                        <input id="last_name"
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Last Name</Label>
+                        <Input id="last_name"
                             type="text"
                             placeholder="last name"
                             value={this.state.newUser.last_name}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
-                        <label>Username</label>
-                        <input id="username"
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Username</Label>
+                        <Input id="username"
                             type="text"
                             placeholder="username"
                             value={this.state.newUser.username}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
-                        <label>Password</label>
-                        <input id="password"
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Password</Label>
+                        <Input id="password"
                             type="password"
                             placeholder="password"
                             value={this.state.newUser.password}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
-                            <label>Email</label>
-                            <input id="email"
+                    </FormGroup>
+                    <FormGroup>
+                            <Label>Email</Label>
+                            <Input id="email"
                                 type="email"
                                 placeholder="email"
                                 value={this.state.newUser.email}
                                 onChange={this.handleChange}
                             />
-                        </div>
-                        <button type="submit">Submit</button>
-                </form>
+                        </FormGroup>
+                        <Button type="submit">Sign Up</Button>
+                </Form>
 
-           </React.Fragment>
+           </Container>
                 )
             }
         }

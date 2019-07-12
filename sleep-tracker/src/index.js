@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import jwt_decode from 'jwt-decode';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, withRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,17 +19,16 @@ const store=createStore(
     rootReducer,
     devTool(applyMiddleware(thunk,logger))
 )
-console.log(store.getState())
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
-// const AppRouter=withRouter(App);
+const AppRouter=withRouter(App);
 
-//is token set?
-// if(localStorage, jwtToken) {
-//     setToken(localStorage.jwtToken);
+// is token set?
+// if(localStorage, token) {
+//     setToken(localStorage.token);
 //     //grab user info with decoded token
-//     const decodeToken=jwt_decode(localStorage.jwtToken);
+//     const decodeToken=jwt_decode(localStorage.token);
 //     //auth and sets user
 //     store.dispatch(setCurrentUser(decodeToken));
 
@@ -45,8 +44,8 @@ console.log(store.getState())
  ReactDOM.render(
      <Provider store={store}>
          <Router>
-             <App />
-             {/* <AppRouter> */}
+             {/* <App /> */}
+             <AppRouter />
 
              {/* </AppRouter> */}
          </Router>
